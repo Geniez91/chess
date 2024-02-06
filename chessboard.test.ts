@@ -1,19 +1,27 @@
-import { ChessBoard, PieceType, Color } from './index';
+// tests/ChessBoard.test.ts
+
+import { ChessBoard, PieceType, Color } from ".";
+import Knight from "./pieces/Knight";
+
 
 describe('ChessBoard', () => {
-  let board = new ChessBoard();
-    it('placing a piece on the board', () => {
-        const piece = { type: PieceType.King, color: Color.White };
-        board.placePiece(piece, 0, 0);
-        expect(board.getPieceAt(0, 0)).toEqual(piece);
+    let chessBoard: ChessBoard;
+
+    beforeEach(() => {
+        chessBoard = new ChessBoard();
+        chessBoard.initializeBoard();
     });
 
-    it('moving a piece on the board', () => {
+    test('placePiece should correctly place a piece on the board', () => {
         const piece = { type: PieceType.King, color: Color.White };
-        board.placePiece(piece, 0, 0);
-        board.movePiece(0, 0, 1, 1);
-        expect(board.getPieceAt(1, 1)).toEqual(piece);
-        expect(board.getPieceAt(0, 0)).toBeUndefined();
+        chessBoard.placePiece(piece, 2, 3);
+        expect(chessBoard.getPieceAt(2, 3)).toEqual(piece);
     });
 
+    test('movePiece should correctly move a piece on the board', () => {
+        const piece = chessBoard.getPieceAt(0, 0);
+        chessBoard.movePiece(0, 0, 4, 4);
+        expect(chessBoard.getPieceAt(4, 4)).toEqual(piece);
+        expect(chessBoard.getPieceAt(0, 0)).toBeUndefined();
+    });
 });
