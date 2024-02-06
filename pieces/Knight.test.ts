@@ -41,7 +41,7 @@ describe('Knight', () => {
 
   it('should return true for valid horizontal backward-left move', () => {
     const knight = new Knight(Color.White);
-    expect(knight.move([1, 2], [-1, 0])).toBe(true);
+    expect(knight.move([1, 2], [-1, 1])).toBe(true);
   });
 
   it('should return false for invalid move', () => {
