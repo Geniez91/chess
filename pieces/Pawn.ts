@@ -1,7 +1,7 @@
 import { Piece, PieceType, Color } from "..";
 
 export class Pawn implements Piece {
-    type: PieceType = PieceType.Pawn; // Spécifiez le type de pièce
+    type: PieceType = PieceType.Pawn; 
     color: Color;
 
     constructor(color: Color) {
@@ -18,7 +18,7 @@ export class Pawn implements Piece {
         // Le pion peut avancer d'une case vers l'avant
         if (deltaY === 1) {
             // Pour le premier mouvement, le pion peut avancer de 1 ou 2 cases
-            if (isFirstMove && (deltaX === 0 || deltaX === 0)) {
+            if (isFirstMove && deltaX === 0 || deltaX === 0) {
                 return true;
             }
             // Sinon, le pion ne peut avancer que d'une seule case

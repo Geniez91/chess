@@ -1,7 +1,7 @@
-import { Piece, PieceType, Color } from "..";
+import { Piece, PieceType, Color } from "../index";
 
 export class Bishop implements Piece {
-    type: PieceType = PieceType.Bishop; // Spécifiez le type de pièce
+    type: PieceType = PieceType.Bishop; 
     color: Color;
 
     constructor(color: Color) {
@@ -15,12 +15,12 @@ export class Bishop implements Piece {
         const deltaX = Math.abs(targetX - currentX);
         const deltaY = Math.abs(targetY - currentY);
 
-        // Le fou se déplace en diagonale sur un nombre quelconque de cases
+   // Le fou se déplace en diagonale sur un nombre quelconque de cases
         if (deltaX === deltaY) {
             return true;
         }
 
-        return false; // Retourne faux si le mouvement n'est pas valide
+        return false; // Retourne faux si le mouvement n'est pas valide 
     }
 }
 

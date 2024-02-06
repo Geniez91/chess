@@ -1,7 +1,7 @@
 import { Piece, PieceType, Color } from "..";
 
 export class Queen implements Piece {
-    type: PieceType = PieceType.Queen; // Spécifiez le type de pièce
+    type: PieceType = PieceType.Queen; 
     color: Color;
 
     constructor(color: Color) {
